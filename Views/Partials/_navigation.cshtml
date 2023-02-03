@@ -18,7 +18,7 @@
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="@homePage.Url()">@homePage.Name</a></li>
                 @if(children != null && children.Any()){
                     @foreach(var child in children){
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="@child.Url()">@child.Name</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="@child.Url()">@child.Url()</a></li>
                     }
                 }
             </ul>
