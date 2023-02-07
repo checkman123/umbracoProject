@@ -12,8 +12,9 @@
 
 }
 
-<div id="@carouselId" class="carousel slide" data-bs-ride="carousel">
-    @{
+<div id="@carouselId" class="carousel slide @((settings.ShowDarkMode) ? "carousel-dark" : null)" data-bs-ride="carousel">
+    @if (settings.ShowIndicators)
+    {
         var itemCount = row.CarouselItems.Count;
         
         <div class="carousel-indicators">
@@ -64,12 +65,15 @@
             }
         }
     </div>
+    @if (settings.ShowNavigationArrows)
+    {
     <button class="carousel-control-prev" type="button" data-bs-target="#@carouselId" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#@carouselId" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#@carouselId" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    }
 </div>
