@@ -2,7 +2,7 @@
 
 @{
     var row = (FeaturedItemsRow)Model.Content;
-    var settings = (FeaturedItemsRowSettingsa)Model.Settings;
+    var settings = (FeaturedItemsRowSettings)Model.Settings;
 
     if (settings?.Hide ?? false) return;
     if (row.FeaturedItems == null || !row.FeaturedItems.Any()) return;
